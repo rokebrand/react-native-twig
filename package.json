@@ -1,0 +1,27 @@
+{
+  "name": "@rokebrand/react-native-twig",
+  "version": "1.0.0",
+  "main": "twig.js",
+  "keywords": [
+    "react-native", "twig"
+  ],
+  "license": "MIT",
+  "author": "Brendan Rokebrand <brendan@rokebrand.co.za> (http://rokebrand.co.za)",
+  "rnpm": {},
+  "devDependencies": {},
+  "_resolved": "",
+  "_integrity": "",
+  "_from": "@rokebrand/react-native-twig",
+  "description": "Twig templating for use in React Native for print templates",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rokebrand/react-native-twig.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rokebrand/react-native-twig/issues"
+  },
+  "homepage": "https://github.com/rokebrand/react-native-twig#readme"
+}
