@@ -2,6 +2,8 @@
 Twig templating for use in React Native for print templates
 
 ```
+  import Twig from '@rokebrand/react-native-twig';
+
   const properties = {
     title: 'hello there',
   }
