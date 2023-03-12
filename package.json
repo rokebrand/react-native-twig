@@ -1,10 +1,16 @@
 {
   "name": "@rokebrand/react-native-twig",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "twig.js",
   "keywords": [
     "react-native",
-    "twig"
+    "twig",
+    "PDF",
+    "Share",
+    "react-native-html-to-pdf",
+    "react-native-print",
+    "react-native-share",
+    "react-native-fs"
   ],
   "license": "MIT",
   "author": "Brendan Rokebrand <brendan@rokebrand.co.za> (http://rokebrand.co.za)",
