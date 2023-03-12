@@ -12,7 +12,7 @@ module.exports = function (Twig) {
     //     // NOTE: this is in a try/catch to avoid errors cross platform
     //     console.warn('Missing fs and path modules. ' + error);
     // }
-
+    //
     // Twig.Templates.registerLoader('fs', function (location, params, callback, errorCallback) {
     //     let template;
     //     let data = null;

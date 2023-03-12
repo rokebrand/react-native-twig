@@ -1006,7 +1006,8 @@ module.exports = function (Twig) {
                 state.macros[token.macroName] = function (...args) {
                     // Pass global context and other macros
                     const macroContext = {
-                        ...context,
+                        // Use current state context because state context includes current loop variables as well
+                        ...state.context,
                         _self: state.macros
                     };
                     // Save arguments
@@ -1238,7 +1239,6 @@ module.exports = function (Twig) {
                     .then(fileName => {
                         const embedOverrideTemplate = new Twig.Template({
                             data: token.output,
-                            id: state.template.id,
                             base: state.template.base,
                             path: state.template.path,
                             url: state.template.url,
@@ -1294,7 +1294,7 @@ module.exports = function (Twig) {
              *  Format: {% with {some: 'values'} [only] %}
              */
             type: Twig.logic.type.with,
-            regex: /^(?:with\s+([\S\s]+?))(?:\s|$)(only)?$/,
+            regex: /^(?:with(?:\s+([\S\s]+?))?)(?:\s|$)(only)?$/,
             next: [
                 Twig.logic.type.endwith
             ],
@@ -1339,9 +1339,11 @@ module.exports = function (Twig) {
                         });
                 }
 
+                const isolatedState = new Twig.ParseState(state.template, undefined, innerContext);
+
                 return promise
                     .then(() => {
-                        return state.parseAsync(token.output, innerContext);
+                        return isolatedState.parseAsync(token.output);
                     })
                     .then(output => {
                         return {
